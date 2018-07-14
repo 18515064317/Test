@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+        form {
+          margin-top: 200px;
+          width: 420px;
+          position: relative;
+          padding-bottom: 70px;
+        }
+        input[type="text"], input[type="password"] {
+            margin-bottom: 30px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #cdcdcd;
+            padding: 10px;
+            width: 330px;
+        }
+        input[type="button"]{
+            margin-bottom: 30px;
+            height: 40px;
+            line-height: 20px;
+            border: 1px solid #ffff00;
+            font-size:20px;
+            padding: 10px;
+            width: 100px;
+        }
+        .subBtn {
+            width: 100px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -50px;
+            border: 1px solid #cdcdcd;
+        }
+    </style>
+</head>
+<body>
+<input id = "alert" value = "alert" type = "button" onclick = "alert('您关注selenium Python吗？');"/><br />
+<input id = "confirm" value = "confirm" type = "button" onclick = "confirm('确定关注selenium Python？');"/><br />
+<input id = "prompt" value = "prompt" type = "button" onclick = "var name = prompt('请输入:'); document.write(name) "/><br />
+<select id="ShippingMethod" onchange="updateShipping(options[selectedIndex]);" name="ShippingMethod">
+<option value="12.51">UPS Next Day Air ==> $12.51</option>
+<option value="11.61">UPS Next Day Air Saver ==> $11.61</option>
+<option value="10.69">UPS 3 Day Select ==> $10.69</option>
+<option value="9.03">UPS 2nd Day Air ==> $9.03</option>
+<option value="8.34">UPS Ground ==> $8.34</option>
+<option value="9.25">USPS Priority Mail Insured ==> $9.25</option>
+<option value="7.45">USPS Priority Mail ==> $7.45</option>
+<option value="3.20" selected="">USPS First Class ==> $3.20</option>
+</select>
+<div class="row-fluid">
+<div class="span6 well">
+<h3>upload_file</h3>
+<input type="file" name="file" />
+</div>
+</div>
+<div style="width: 50%; margin: 0 auto;">
+    <form method="post">
+        <div>
+            <label for="name">姓 名：</label>
+            <input id="name" type="text" name="username" placeholder="请输入姓名" />
+        </div>
+        <div>
+            <label for="pwd">密 码：</label>
+            <input id="pwd" type="password" name="password" placeholder="请输入密码" />
+        </div>
+        <!--<input  class="subBtn" type="submit" value="登录"/>-->
+       <!-- <span class="subBtn" onclick="goPage()"> 登录</span>-->
+        <a id="lohin" href="https://www.baidu.com/" class="subBtn">登录</a>
+
+    </form>
+    <script type="text/javascript">
+        var oBtn = document.querySelector('.subBtn')
+
+        oBtn.onclick = function () {
+         var $InputName = document.querySelector('input[name="username"]')
+         var $InputPwd = document.querySelector('input[name="password"]')
+         console.log($InputName.value)
+         console.log($InputPwd.value)
+       }
+
+       function goPage() {
+       alert('1')
+         window.location.href="http://www.baidu.com"
+       }
+    </script>
+</div>
+</body>
+</html>

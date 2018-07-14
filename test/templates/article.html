@@ -1,0 +1,19 @@
+$def with (a)
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>article</title>
+</head>
+<body>
+    <h1>文章列表</h1>
+    <ul>
+        <!--
+        $for i in a:
+            <li>$i[0] >== $i[1]</li>
+        -->
+        $for i, v in enumerate(a):
+            $for j, k in enumerate(v):
+                <li>$j >== $k</li>
+    </ul>
+</body>
+</html>
